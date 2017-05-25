@@ -86,6 +86,7 @@ export default class Search extends Component {
     super(props);
     this.state = {
       input: '',
+      hideBack: true,
       show: props.showOnLoad,
       top: new Animated.Value(props.showOnLoad ? 0 : INITIAL_TOP + props.heightAdjust),
     };
@@ -192,6 +193,18 @@ export default class Search extends Component {
     return some(collection, (item) => this._depthFirstSearch(item, input));
   }
 
+    _onFocus = () => {
+      const { onFocus } = this.props
+      this.setState({hideBack: false})
+      onFocus()
+    }
+    
+    _onBack = () => {
+      const { onBack } = this.props
+      this.setState({hideBack: true})
+      onBack()
+    }
+    
   render = () => {
     const {
       placeholder,
@@ -218,6 +231,7 @@ export default class Search extends Component {
       backCloseSize,
         fontSize
     } = this.props;
+    
     return (
      
           <View style={[
@@ -226,12 +240,12 @@ export default class Search extends Component {
             ]}
           >
           {
-            !hideBack &&
+            !this.state.hideBack &&
             <TouchableOpacity
               accessible={true}
               accessibilityComponentType="button"
               accessibilityLabel={backButtonAccessibilityLabel}
-              onPress={onBack || this.hide}>
+              onPress={ this._onBack || this.hide}>
               {
               backButton ?
               <View style={{width: backCloseSize, height: backCloseSize}} >{backButton}</View>
@@ -259,7 +273,7 @@ export default class Search extends Component {
               ]}
               onChangeText={(input) => this._onChangeText(input)}
               onSubmitEditing={() => onSubmitEditing ? onSubmitEditing() : null}
-              onFocus={() => onFocus ? onFocus() : null}
+              onFocus={() => this._onFocus()}
               placeholder={placeholder}
               placeholderTextColor={placeholderTextColor}
               value={this.state.input}
