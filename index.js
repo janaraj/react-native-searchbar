@@ -268,7 +268,7 @@ export default class Search extends Component {
                 styles.input,
                 {
                   fontSize: fontSize, color: textColor, fontFamily: fontFamily,
-                  marginLeft: 30,
+                  marginLeft: this.state.hideBack ? 30: 0,
                 }
               ]}
               onChangeText={(input) => this._onChangeText(input)}
