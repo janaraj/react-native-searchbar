@@ -308,7 +308,6 @@ export default class Search extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'transparent',
@@ -333,10 +332,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    ...Platform.select({
-        ios: { height: 30 },
-        android: { height: 50 },
-    }),
-    width: Dimensions.get('window').width - 120,
+   flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+    borderColor: '#b6b6b6',
+    borderStyle: 'solid',
+    borderWidth: 1,
   }
 });
