@@ -232,7 +232,7 @@ export default class Search extends Component {
           }
           <View style={[
               styles.nav,
-              { height: (Platform.OS === 'ios' ? 52 : 62) + heightAdjust },
+              { height: (Platform.OS === 'ios' ? 50 : 50) + heightAdjust },
             ]}
           >
           {
@@ -309,10 +309,12 @@ export default class Search extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    zIndex: 10,
-    position: 'absolute',
-    elevation: 2,
-    shadowRadius: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+    borderColor: '#b6b6b6',
+    borderStyle: 'solid',
+    borderWidth: 1,
   },
   navWrapper: {
     width: Dimensions.get('window').width,
