@@ -219,20 +219,15 @@ export default class Search extends Component {
         fontSize
     } = this.props;
     return (
-      <Animated.View style={[styles.container, {
-          top: this.state.top,
-          shadowOpacity: iOSHideShadow ? 0 : 0.7,
-      }]}>
-        {
-        this.state.show &&
-        <View style={[styles.navWrapper, { backgroundColor }]} >
+     
+          <View style={[styles.navWrapper, { backgroundColor }]} >
           {
             Platform.OS === 'ios' && iOSPadding &&
             <View style={{ height: 20 }} />
           }
           <View style={[
               styles.nav,
-              { height: (Platform.OS === 'ios' ? 50 : 50) + heightAdjust },
+              { height: 50 },
             ]}
           >
           {
@@ -265,7 +260,6 @@ export default class Search extends Component {
                 {
                   fontSize: fontSize, color: textColor, fontFamily: fontFamily,
                   marginLeft: hideBack ? 30 : 0,
-                  marginTop: (Platform.OS === 'ios' ? heightAdjust / 2 + 10 : 0)
                 }
               ]}
               onChangeText={(input) => this._onChangeText(input)}
@@ -300,8 +294,6 @@ export default class Search extends Component {
             </TouchableOpacity>
           </View>
         </View>
-        }
-      </Animated.View>
     );
   }
 }
@@ -319,12 +311,6 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
   },
   nav: {
-    ...Platform.select({
-        android: {
-          borderBottomColor: 'lightgray',
-          borderBottomWidth: StyleSheet.hairlineWidth,
-        },
-    }),
     flex: 1,
     flexBasis: 1,
     flexDirection: 'row',
