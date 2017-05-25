@@ -220,11 +220,6 @@ export default class Search extends Component {
     } = this.props;
     return (
      
-          <View style={[styles.navWrapper, { backgroundColor }]} >
-          {
-            Platform.OS === 'ios' && iOSPadding &&
-            <View style={{ height: 20 }} />
-          }
           <View style={[
               styles.nav,
               { height: 50 },
@@ -293,36 +288,23 @@ export default class Search extends Component {
               }
             </TouchableOpacity>
           </View>
-        </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  nav: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'transparent',
     borderColor: '#b6b6b6',
     borderStyle: 'solid',
     borderWidth: 1,
-  },
-  navWrapper: {
-    width: Dimensions.get('window').width,
-  },
-  nav: {
-    flex: 1,
-    flexBasis: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
   },
   input: {
-   flexDirection: 'row',
-    alignItems: 'center',
+    flex: 1,
+    fontWeight: 'normal',
+    color: '#212121',
     backgroundColor: 'transparent',
-    borderColor: '#b6b6b6',
-    borderStyle: 'solid',
-    borderWidth: 1,
   }
 });
