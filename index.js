@@ -313,7 +313,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderColor: 'rgb(200, 199, 204)',
     borderWidth: 1,
-    padding: 5
+    margin: 10
   },
   input: {
     flex: 1,
