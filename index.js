@@ -312,7 +312,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'transparent',
     borderColor: 'rgb(200, 199, 204)',
-    borderWidth: 1
+    borderWidth: 1,
+    padding: 5
   },
   input: {
     flex: 1,
