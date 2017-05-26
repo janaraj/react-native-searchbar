@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
   nav: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'transparent',
+    backgroundColor: 'white',
     borderColor: 'rgb(200, 199, 204)',
     borderWidth: 1,
     margin: 10
