@@ -311,9 +311,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'transparent',
-    borderColor: '#b6b6b6',
-    borderStyle: 'solid',
-    borderWidth: 1,
+    elevation: 2,
+    shadowRadius: 5,
   },
   input: {
     flex: 1,
