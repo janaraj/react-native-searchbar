@@ -236,7 +236,7 @@ export default class Search extends Component {
      
           <View style={[
               styles.nav,
-              { height: 50 },
+              { height: 45 },
             ]}
           >
           {
